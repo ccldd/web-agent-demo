@@ -22,7 +22,7 @@
 
   fetch("http://localhost:3000", {
     method: "POST",
-    body: textbox.textContent,
+    body: textbox.value,
   })
   .then(async (res) => {
       const li = document.createElement("li")
