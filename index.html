@@ -16,11 +16,11 @@
 </body>
 
 <script>
-  const textbox = document.querySelector(".textbox")
-  const btn = document.querySelector("send")
-  const results = document.querySelector("results")
+  const textbox = document.querySelector("#textbox")
+    const btn = document.querySelector("#send")
+    const results = document.querySelector("#results")
 
-  fetch("http://localhost:3000", {
+  fetch("http://localhost:3001", {
     method: "POST",
     body: textbox.value,
   })
