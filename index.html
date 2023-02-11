@@ -20,14 +20,15 @@
   const btn = document.querySelector("send")
   const results = document.querySelector("results")
 
-  const res = await fetch("http://localhost:3000", {
+  fetch("http://localhost:3000", {
     method: "POST",
     body: textbox.textContent,
   })
-
-  const li = document.createElement("li")
-  li.innerText = await res.text()
-  results.appendChild(li)
+  .then(res => {
+      const li = document.createElement("li")
+      li.innerText = await res.text()
+      results.appendChild(li)
+  })
 </script>
 
 </html>
