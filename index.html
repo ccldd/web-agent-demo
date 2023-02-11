@@ -24,7 +24,7 @@
     method: "POST",
     body: textbox.textContent,
   })
-  .then(res => {
+  .then(async (res) => {
       const li = document.createElement("li")
       li.innerText = await res.text()
       results.appendChild(li)
