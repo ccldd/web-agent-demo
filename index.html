@@ -17,10 +17,11 @@
 
 <script>
   const textbox = document.querySelector("#textbox")
-    const btn = document.querySelector("#send")
-    const results = document.querySelector("#results")
+  const btn = document.querySelector("#send")
+  const results = document.querySelector("#results")
 
-  fetch("http://localhost:3001", {
+  btn.onclick = () => {
+    fetch("http://localhost:3001", {
     method: "POST",
     body: textbox.value,
   })
@@ -29,6 +30,7 @@
       li.innerText = await res.text()
       results.appendChild(li)
   })
+  } 
 </script>
 
 </html>
