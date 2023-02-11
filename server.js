@@ -9,16 +9,15 @@ const httpPort = 3000;
 const httpsPort = 3001;
 
 [http, https].forEach((app) => {
-  app.use(express.json());
+  app.use(express.text());
 
   app.get("/", (req, res) => {
-    res.send("Hello world");
+    res.status(200).send("Hello world");
   });
 
   app.post("/", (req, res) => {
     console.log(req.body);
-    res.status(200);
-    res.send(req.body)
+    res.status(200).send(req.body);
   });
 });
 

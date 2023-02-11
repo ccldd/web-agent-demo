@@ -21,9 +21,9 @@
   const results = document.querySelector("#results")
 
   btn.onclick = () => {
-    fetch("http://localhost:3001", {
-    method: "POST",
-    body: textbox.value,
+    fetch("https://localhost:3001", {
+      method: "POST",
+      body: textbox.value,
   })
   .then(async (res) => {
       const li = document.createElement("li")
