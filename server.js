@@ -1,6 +1,7 @@
 const express = require("express");
 const https_ = require("https");
 const fs = require("fs");
+const cors = require("cors");
 
 const http = express();
 const https = express();
@@ -10,6 +11,11 @@ const httpsPort = 3001;
 
 [http, https].forEach((app) => {
   app.use(express.text());
+  app.use(
+    cors({
+      origin: "https://ccldd.github.io",
+    })
+  );
 
   app.get("/", (req, res) => {
     res.status(200).send("Hello world");
